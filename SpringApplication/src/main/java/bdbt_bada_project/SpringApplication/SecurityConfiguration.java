@@ -35,13 +35,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/", "/index").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers("/resources/static/**").permitAll()
+                .antMatchers("/main").authenticated()
+                .antMatchers("/main_admin").access("hasRole('ADMIN')")
+                .antMatchers("/main_user").access("hasRole('USER')")
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .defaultSuccessUrl("/main")
                 .permitAll()
                 .and()
                 .logout()
+                .logoutUrl("/index")
                 .logoutSuccessUrl("/index")
                 .permitAll();
     }
