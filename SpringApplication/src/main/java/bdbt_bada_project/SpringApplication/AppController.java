@@ -1,4 +1,5 @@
 package bdbt_bada_project.SpringApplication;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,9 +8,23 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Configuration
 public class AppController implements WebMvcConfigurer{
+
+    @Autowired
+    private UserDAO dao;
+
+    @RequestMapping("/")
+    public String viewHomePage(Model model) {
+        List<User> listUser = dao.list();
+        model.addAttribute("listUser", listUser);
+        return "index";
+    }
+
+
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry){
         registry.addViewController("/index").setViewName("index");
