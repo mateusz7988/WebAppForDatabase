@@ -42,22 +42,35 @@ class UserDAOTest {
 
 	@Test
 	void testSave() {
-		fail("Not yet implemented");
+
+		User user = new User(27,"play", "2022-10-01", 1, 1, 1);
+		dao.save(user);
 	}
 
 	@Test
 	void testGet() {
-		fail("Not yet implemented");
+		int id = 27;
+		User user = dao.get(id);
+		assertNotNull(user);
 	}
 
 	@Test
 	void testUpdate() {
-		fail("Not yet implemented");
+		User user = new User();
+		user.setID_Operatora(11);
+		user.setData_zalozenia("2022-11-12");
+		user.setNazwa("Orange");
+		user.setNIP(123);
+		user.setNumer_KRS(123);
+		user.setNumer_REGON(123);
+
+		dao.update(user);
 	}
 
 	@Test
 	void testDelete() {
-		fail("Not yet implemented");
+		int id = 27;
+		dao.delete(id);
 	}
 
 }
