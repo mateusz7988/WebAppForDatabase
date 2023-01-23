@@ -18,8 +18,8 @@ class UserDAOTest {
 	void setUp() throws Exception {
 		DriverManagerDataSource datasource = new DriverManagerDataSource();
 		datasource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
-		datasource.setUsername("Mati");
-		datasource.setPassword("");
+		datasource.setUsername("MBEDNAR2");
+		datasource.setPassword("MBEDNAR2");
 		datasource.setDriverClassName("oracle.jdbc.OracleDriver");
 
 		/* Import JdbcTemplate */

@@ -21,7 +21,7 @@ public class UserDAO {
 
 	/* Import java.util.List */
 	public List<User> list(){
-		String sql = "SELECT * FROM USER";
+		String sql = "SELECT * FROM Operatorzy";
 		List<User> listUser = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(User.class));
 		return listUser;
 	}
