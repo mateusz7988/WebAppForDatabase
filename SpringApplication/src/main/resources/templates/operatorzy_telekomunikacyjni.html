@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Operatorzy Telekomunikacyjni</title>
+
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+  <link rel="stylesheet" href="/css/navigation.css"/>
+</head>
+
+<!-- <body th:style="'background: url(/assets/img/img.png) no-repeat center center fixed;'"> -->
+
+
+<!--<style th:inline="text">-->
+<!--    body{-->
+<!--        background: url([[@{/assets/img/img.png}]])-->
+<!--        no-repeat center center fixed;-->
+<!--    }-->
+<!--</style>-->
+
+
+<!-- Navigation -->
+<body>
+<div class="topnav">
+  <a class="active" th:href="@{/index}">Home</a>
+  <a th:href="@{/uslugi}">Usługi</a>
+  <a th:href="@{/klienci}">Klienci</a>
+  <div class="topnav-right">
+    <a th:href="@{/Operatorzy}">Operatorzy Telekomunikacyjni</a>
+    <a th:href="@{/pracownicy}">Pracownicy</a>
+    <a th:href="@{/index}" onclick="successfullyLogout()">Logout</a>
+
+  </div>
+</div>
+<div align="center">
+
+  <br>
+  <br>
+  <h3>Tutaj znajdują się informacje dotyczące Operatorów Telekomunikacyjnych.</h3>
+  <a href="/newO">Dodaj nowego Operatora Telekomunikacyjnego</a>
+  <br/><br/>
+  <div class="scrollmenu">
+    <div style="width: 1000px; overflow: scroll; border:1px solid #ccc;">
+      <table border = "1" cellpadding = "10">
+
+        <thead>
+        <tr>
+          <th>ID_Operatora</th> <!–- Table column -->
+          <th>Nazwa</th>
+          <th>Data_zalozenia</th>
+          <th>NIP</th>
+          <th>Numer_KRS</th>
+          <th>Numer_REGON</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:each = "user:${userList}">
+          <td th:text = "${user.ID_Operatora}">Id Operatora</td>
+          <td th:text = "${user.Nazwa}">Nazwa</td>
+          <td th:text = "${user.Data_zalozenia}">Data zalozenia</td>
+          <td th:text = "${user.NIP}">NIP</td>
+          <td th:text = "${user.Numer_KRS}">Numer KRS</td>
+          <td th:text = "${user.Numer_REGON}">Numer REGON</td>
+
+          <!--<td>Default enabled</td>-->
+          <td>
+            <a class="fas fa-pencil-alt" th:href="@{'/editO/' + ${user.ID_Operatora}}"></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="fas fa-trash" th:href="@{'/deleteO/' + ${user.ID_Operatora}}" onclick="return confirm('Czy chcesz usunąć operatora?')"></a>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

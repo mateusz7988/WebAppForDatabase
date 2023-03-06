@@ -1,0 +1,22 @@
+input:invalid {
+    border: 2px dashed red;
+}
+
+input:invalid:required {
+    background-color: yellow;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+select:invalid {
+    border: 2px dashed red;
+}
+
+select:invalid:required {
+    background-color: yellow;
+}
+
+select:valid {
+    border: 2px solid green;
+}

@@ -1,101 +1,56 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Welcome Page</title>
+  <meta charset="UTF-8"/>
+  <title>Welcome Page</title>
 
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+  <link rel="stylesheet" href="/css/navigation.css"/>
+  <link rel="stylesheet" href="/css/wifi.css"/>
+
 
 </head>
 
-<!-- <body th:style="'background: url(/assets/img/img.png) no-repeat center center fixed;'"> -->
+<body>
 
 
-<!--<style th:inline="text">-->
-<!--    body{-->
-<!--        background: url([[@{/assets/img/img.png}]])-->
-<!--        no-repeat center center fixed;-->
-<!--    }-->
-<!--</style>-->
+<div class="topnav">
+  <a class="active" th:href="@{/index}">Home</a>
+  <a th:href="@{/news}">News</a>
+  <a th:href="@{/contact}">Contact</a>
+  <div class="topnav-right">
+    <a th:href="@{/main}">Login</a>
+    <a th:href="@{/search}">Search</a>
+    <a th:href="@{/about}">About</a>
+
+  </div>
+</div>
+
+<div class="content">
+  <h1>Witaj na stronie Operatora Telekomunikacyjnego!</h1>
+  <br>
+
+  <div style="font-size:20px">Jeśli chcesz się zalogować, naciśnij <a th:href="@{/main}"><b>tutaj</b></a> lub w prawym górnym rogu.
+    </div>
+
+
+</div>
+
+
+
 
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">BDBT Spring Boot Project - Part II</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/main}">Main</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/main}">Login</a></a>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
 
 
 <!--Using images in page    -->
 <!-- <img th:src="@{/assets/img/img.png}" alt="Image" class="img-fluid"> -->
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 mt-5">
 
-            <label style="font-size:30px">Welcome to the home page!</label>
-            <div style="font-size:20px">If you want to login, click <a th:href="@{/main}"><b>here</b></a> or in the
-                upper right corner.
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!--<div align="center">
-    <h1>Sales Records</h1>
-
-    <table border="1" cellpadding="10">
-
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Item Name</th>
-            <th>Quantity</th>
-            <th>Amount</th>
-            <th>Action</th>
-
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr th:each="sale : ${listSale}">
-            <td th:text="${sale.id}">ID</td>
-            <td th:text="${sale.item}">Item Name</td>
-            <td th:text="${sale.quantity}">Quantity</td>
-            <td th:text="${sale.amount}">Amount</td>
-        </tr>
-        </tbody>
-
-    </table>
-
-</div>-->
 
 
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>

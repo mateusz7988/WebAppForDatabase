@@ -1,0 +1,32 @@
+
+
+
+nav{
+    background: white;
+    padding: 10px 40px 10px 70px;
+    border: 1px solid #B0B1AE;
+    border-left: none;
+    border-right: none;
+
+}
+nav ul{
+    display: flex;
+    list-style: wrap;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+#logo{
+    flex-basis: 20%;
+    font-size: 0;
+}
+#logo img{
+    height: auto;
+    width: auto;
+
+    max-width: 40%;
+    overflow: hidden;
+}
+img{
+    border-radius: 15px;
+}
